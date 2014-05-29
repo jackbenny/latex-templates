@@ -1,0 +1,71 @@
+% My template for document with custom margins, a nice looking 
+% titlepage and header & footer. 
+% This is the template I use for my lab reports. 
+% Jack-Benny Persson <jack-benny@cyberinfo.se>
+
+\documentclass[11pt,a4paper]{article} 
+\usepackage{cmap}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=3.5cm,lmargin=2.54cm,rmargin=2.54cm}
+\usepackage{fancyhdr}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[yyyymmdd]{datetime}
+\renewcommand{\dateseparator}{-}
+
+\usepackage{graphicx}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+ 
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\setlength{\headheight}{53pt}
+\pagestyle{fancy}
+
+\fancyhf{}
+\lhead{Jack-Benny Persson\\LX13\\Building clusters\\\today}
+\cfoot{Page \thepage}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\vspace*{3.5 cm}
+
+{ \huge \bfseries Lab report X}\\[0.4cm]
+\textsc{\Large Jack-Benny Persson}\\[0.5cm]
+\textsc{\Large LX13}\\[0.5cm]
+\textsc{\Large Building clusters}\\[0.5cm]
+\textsc{\Large \today}\\[0.5cm]
+
+
+\end{center}
+\end{titlepage}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+
+
+\input{content}
+
+
+\end{document}
+
